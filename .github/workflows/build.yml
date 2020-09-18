@@ -1,0 +1,41 @@
+name: Build Project
+
+on:
+  pull_request: {}
+  push: {}
+
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE_2019 }} # Can be generated at https://license.unity3d.com/manual
+
+jobs:
+  build:
+    name: Build Unity
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        targetPlatform:
+          - StandaloneOSX
+          - StandaloneWindows64
+          - StandaloneLinux64
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+      - name: Load Library
+        uses: actions/cache@v1.1.0
+        with:
+          path: ragdoll-olympics/Library
+          key: Library
+      - name: Build project
+        uses: webbertakken/unity-builder@v1.2
+        with:
+          projectPath: "ragdoll-olympics"
+          unityVersion: 2019.4.10f1
+          targetPlatform: ${{ matrix.targetPlatform }}
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: Ragdoll Olympics - ${{ matrix.targetPlatform }}
+          path: build
