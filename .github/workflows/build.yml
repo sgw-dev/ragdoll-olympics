@@ -29,7 +29,7 @@ jobs:
           path: ragdoll-olympics/Library
           key: Library
       - name: Build project
-        uses: webbertakken/unity-builder@v0.10
+        uses: webbertakken/unity-builder@v1.2
         with:
           projectPath: "ragdoll-olympics"
           unityVersion: 2019.4.10f1
