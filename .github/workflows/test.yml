@@ -19,7 +19,7 @@ jobs:
       - name: Load Library
         uses: actions/cache@v1.1.0
         with:
-          path: Library
+          path: ragdoll-olympics/Library
           key: Library
       - name: Run Tests
         uses: webbertakken/unity-test-runner@v1.4
