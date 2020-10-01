@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/LoadingScreen.unity
+    guid: ce14b8b5480a5d2918060a407dbf9a56
+  - enabled: 1
+    path: Assets/Scenes/OlympicEventScene.unity
+    guid: 19f21241c32ac9d90aca08fefa76e41f
+  - enabled: 1
+    path: Assets/Scenes/UI/golf_ui.unity
+    guid: 6c83a58990164dac3bf41c22a441de91
+  - enabled: 1
+    path: Assets/Scenes/Maps/Golf/golf_dev.unity
+    guid: f1299d648326aa194bd4f47caeee16cc
   m_configObjects: {}
